@@ -15,7 +15,11 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:26.0-jre'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 mainClassName = 'demogradle.App'
