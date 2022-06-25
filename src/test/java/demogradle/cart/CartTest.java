@@ -13,10 +13,6 @@ public class CartTest {
     public void testSetup()
     {
         cart = new Cart();
-
-        cart.addItem(new Item("Batata", 5.50));
-        cart.addItem(new Item("Arroz", 10.20));
-        cart.addItem(new Item("Banana", 2.30));
     }
 
     @Test
@@ -24,12 +20,15 @@ public class CartTest {
     {
         //Arrange
         double total = 0.0;
-        System.out.println("teste");
+        cart.addItem(new Item("Batata", 5.50));
+        cart.addItem(new Item("Arroz", 10.20));
+        cart.addItem(new Item("Banana", 2.30));
 
         //Act
         total = cart.getTotalPrice();
 
         //Assert
         Assertions.assertNotEquals(0.0, total);
+        Assertions.assertEquals(18.00, total);
     }
 }
