@@ -31,4 +31,14 @@ public class CartTest {
         Assertions.assertNotEquals(0.0, total);
         Assertions.assertEquals(18.00, total);
     }
+
+    @Test
+    public void addItem()
+    {
+        //Act
+        cart.addItem(new Item("Batata", 5.50));
+
+        //Assert
+        Assertions.assertFalse(cart.getItems().isEmpty());
+    }
 }
