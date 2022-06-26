@@ -41,4 +41,12 @@ public class CartTest {
         //Assert
         Assertions.assertFalse(cart.getItems().isEmpty());
     }
+
+    @Test
+    public void addItem_ThrowsException_WhenTotalAmountExceedsAHundred()
+    {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            cart.addItem(new Item("Batata", 100.50));
+        });
+    }
 }
