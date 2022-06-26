@@ -62,4 +62,16 @@ public class CartTest {
 
         Assertions.assertEquals(60.00, purchasePossibility);
     }
+
+    @Test
+    public void getItems()
+    {
+        cart.addItem(new Item("Batata", 15.50));
+
+        Assertions.assertFalse(cart.getItems().isEmpty());
+        Assertions.assertEquals(1, cart.getItems().size());
+        Assertions.assertTrue(cart.getItems().stream()
+                .anyMatch(item -> item.getPrice() == 15.50)
+        );
+    }
 }
