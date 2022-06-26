@@ -49,4 +49,19 @@ public class CartTest {
             cart.addItem(new Item("Batata", 100.50));
         });
     }
+
+    @Test
+    public void getPurchasePossibility()
+    {
+        //Arrange
+        double purchasePossibility = 0.0;
+        cart.addItem(new Item("Batata", 25.50));
+        cart.addItem(new Item("Arroz", 14.50));
+
+        //Act
+        purchasePossibility = cart.getPurchasePossibility();
+
+        //Assert
+        Assertions.assertEquals(60.00, purchasePossibility);
+    }
 }
